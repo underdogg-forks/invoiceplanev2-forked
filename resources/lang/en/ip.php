@@ -392,6 +392,7 @@ return [
     'password' => 'Password',
     'password_confirmation' => 'Password Confirmation',
     'password_successfully_reset' => 'Password successfully reset',
+    'password_validation_length' => 'Password must have at least 6 characters',
     'pay' => 'Pay',
     'pay_now' => 'Pay Now',
     'payment_applied' => 'Your payment has been applied',

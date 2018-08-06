@@ -58,8 +58,16 @@ class InvoiceEditController extends Controller
         $invoice->fill($invoiceInput);
         $invoice->save();
 
+
+        /*
+            "message": "Call to a member function update() on null",
+            "exception": "Symfony\\Component\\Debug\\Exception\\FatalThrowableError",
+            "file": "/app/app/Modules/Invoices/Controllers/InvoiceEditController.php",
+            "line": 62
+         **/
         // Save the custom fields.
-        $invoice->custom->update(request('custom', []));
+        //$invoice->custom->update(request('custom', []));
+
 
         // Save the items.
         foreach ($request->input('items') as $item) {

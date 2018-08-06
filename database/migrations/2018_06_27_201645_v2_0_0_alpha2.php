@@ -623,28 +623,28 @@ class V200Alpha2 extends Migration
 
         // Add basic voucher groups
         DB::table('groups')->insert([
-                'name' => trans('ip.invoice_default'),
-                'next_id' => 1,
-                'left_pad' => 0,
-                'format' => 'INV{NUMBER}',
-                'reset_number' => 0,
-                'last_id' => 0,
-                'last_year' => 0,
-                'last_month' => 0,
-                'last_week' => 0,
-            ]);
+            'name' => trans('ip.invoice_default'),
+            'next_id' => 1,
+            'left_pad' => 0,
+            'format' => 'INV{NUMBER}',
+            'reset_number' => 0,
+            'last_id' => 0,
+            'last_year' => 0,
+            'last_month' => 0,
+            'last_week' => 0,
+        ]);
 
         DB::table('groups')->insert([
-                'name' => trans('ip.quote_default'),
-                'next_id' => 1,
-                'left_pad' => 0,
-                'format' => 'QUO{NUMBER}',
-                'reset_number' => 0,
-                'last_id' => 0,
-                'last_year' => 0,
-                'last_month' => 0,
-                'last_week' => 0,
-            ]);
+            'name' => trans('ip.quote_default'),
+            'next_id' => 1,
+            'left_pad' => 0,
+            'format' => 'QUO{NUMBER}',
+            'reset_number' => 0,
+            'last_id' => 0,
+            'last_year' => 0,
+            'last_month' => 0,
+            'last_week' => 0,
+        ]);
 
         // Add base settings
         $settings = [
@@ -676,9 +676,9 @@ class V200Alpha2 extends Migration
         }
 
         // Add base payment methods
-        PaymentMethod::create(['name' => trans('fi.cash')]);
-        PaymentMethod::create(['name' => trans('fi.credit_card')]);
-        PaymentMethod::create(['name' => trans('fi.online_payment')]);
+        PaymentMethod::create(['name' => @lang('ip.cash')]);
+        PaymentMethod::create(['name' => @lang('ip.credit_card')]);
+        PaymentMethod::create(['name' => @lang('ip.online_payment')]);
 
         // Save new currencies
         Currency::create([

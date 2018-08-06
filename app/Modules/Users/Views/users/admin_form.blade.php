@@ -3,21 +3,21 @@
 @section('content')
 
     <script type="text/javascript">
-      $(function () {
-        $('#name').focus();
+        $(function () {
+            $('#name').focus();
 
-        $('#btn-generate-api-keys').click(function () {
-          $.post("{{ route('api.generateKeys') }}", function (response) {
-            $('#api_public_key').val(response.api_public_key);
-            $('#api_secret_key').val(response.api_secret_key);
-          });
-        });
+            $('#btn-generate-api-keys').click(function () {
+                $.post("{{ route('api.generateKeys') }}", function (response) {
+                    $('#api_public_key').val(response.api_public_key);
+                    $('#api_secret_key').val(response.api_secret_key);
+                });
+            });
 
-        $('#btn-clear-api-keys').click(function () {
-          $('#api_public_key').val('');
-          $('#api_secret_key').val('');
+            $('#btn-clear-api-keys').click(function () {
+                $('#api_public_key').val('');
+                $('#api_secret_key').val('');
+            });
         });
-      });
     </script>
 
     @if ($editMode == true)
@@ -65,7 +65,7 @@
 
                         @if (!$editMode)
                             <div class="form-group">
-                                <label>@lang('ip.password'): </label>
+                                <label>@lang('ip.password') (<em>@lang('ip.password_validation_length')</em>): </label>
                                 {!! Form::password('password', ['id' => 'password', 'class' => 'form-control']) !!}
                             </div>
 
